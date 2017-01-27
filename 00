@@ -1,0 +1,64 @@
+class Conta {
+	double saldo;
+	int numero;
+	Pessoa titular;
+	
+	void deposita(double valorASerDepositado){ //metodo/comportamento   //VOID significa que só ha manipulação de dados
+		this.saldo += valorASerDepositado; //this. informa qua a variavel saldo sempre existirá
+	}
+	
+	void saca(double valorASersacado){
+		if (this.saldo >= valorASersacado){
+		this.saldo -= valorASersacado;
+		}
+	}
+	
+	void transfere(double valor, Conta destino){
+		this.saldo -= valor;
+		destino.saldo += valor;
+	}
+}	
+
+class Pessoa {
+	String CPF;
+	String dataNascimento;
+	String Nome;
+}
+
+class Teste {
+	public static void main (String[] args){
+		Conta jamal = new Conta(); //cria uma variavel jamal
+		jamal.saldo = 800; // informa a variavel mais o atributo necessario para modificar ex:  variavel.atributo = valor;
+		jamal.numero = 1;
+	
+		jamal.titular = new Pessoa();
+		jamal.titular.CPF = "398.156.908.33";
+		jamal.titular.dataNascimento = "02/05/1991";
+		jamal.titular.Nome = "Jamal Marouf Achour";
+						
+		Conta Bruno = new Conta(); //cria uma variavel 
+		Bruno.saldo = 800; // informa a variavel mais o atributo necessario para modificar ex:  variavel.atributo = valor;
+		Bruno.numero = 1;
+	
+		Bruno.titular = new Pessoa();
+		Bruno.titular.CPF = "00.000.0.000";
+		Bruno.titular.dataNascimento = "02/05/1991";
+		Bruno.titular.Nome = "Bruno Araujo";
+		
+		
+		jamal.deposita(100); // informa a variavel mais o metodo/comportamento e o valor : variavel.metodo=valor
+
+		jamal.saca(50);
+		
+		jamal.transfere(25, Bruno);
+		
+	
+		System.out.println("Nome do Cliente: "+jamal.titular.Nome);
+		System.out.println("Data de Nascimento: "+jamal.titular.dataNascimento);
+		System.out.println("Identidade: "+jamal.titular.CPF);
+		System.out.println("Numero da Conta: "+jamal.numero);
+		System.out.println("Saldo na Conta: "+jamal.saldo);
+		
+		
+	}
+}
