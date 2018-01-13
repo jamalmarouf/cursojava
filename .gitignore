@@ -1,12 +1,30 @@
-*.class
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+minerd
+minerd.exe
+*.o
 
-# Package Files #
-*.jar
-*.war
-*.ear
+autom4te.cache
+.deps
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+Makefile
+Makefile.in
+INSTALL
+aclocal.m4
+configure
+configure.lineno
+depcomp
+missing
+install-sh
+stamp-h1
+cpuminer-config.h*
+compile
+config.log
+config.status
+config.status.lineno
+config.guess
+config.sub
+
+mingw32-config.cache
+
+
+*.iml
